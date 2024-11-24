@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>MBTI性格测试</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>MBTI性格测试</h1>
+        <p>了解你的性格类型，发现真实的自己</p>
+      </header>
+
+      <div id="test-container">
+        <div id="welcome-screen" class="active">
+          <h2>欢迎参加MBTI性格测试</h2>
+          <p>
+            本测试包含40个问题，每个问题都没有对错之分。请根据你的第一反应选择最符合自己的选项。
+          </p>
+          <button onclick="startTest()">开始测试</button>
+        </div>
+
+        <div id="question-screen" class="hidden">
+          <div class="progress-bar">
+            <div id="progress-fill"></div>
+          </div>
+          <div id="progress">
+            第 <span id="current-question">1</span> 题（共40题）
+          </div>
+          <div id="question-text" class="question-text"></div>
+          <div class="options">
+            <button onclick="selectOption('A')" class="option-button">
+              选项A
+            </button>
+            <button onclick="selectOption('B')" class="option-button">
+              选项B
+            </button>
+          </div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+          <h2>你的MBTI类型是：</h2>
+          <div id="result-type" class="result-type"></div>
+          <div id="type-description" class="type-description"></div>
+          <div id="dimension-scores" class="dimension-scores"></div>
+          <button onclick="restartTest()" class="restart-button">
+            重新测试
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
